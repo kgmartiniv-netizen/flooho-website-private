@@ -1,0 +1,32 @@
+.pageHeader {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 56px 24px 8px;
+  text-align: center;
+}
+.pageHeader h1 {
+  font-size: 38px;
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 14px;
+}
+.pageHeader p {
+  font-size: 16px;
+  color: var(--warm-gray);
+  line-height: 1.6;
+}
+
+.contactWrap {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 56px 24px 120px;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 40px;
+}
+
+@media (max-width: 720px) {
+  .contactWrap {
+    grid-template-columns: 1fr;
+  }
+}

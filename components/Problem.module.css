@@ -1,0 +1,20 @@
+.problem {
+  background: var(--charcoal);
+  padding: 96px 24px;
+}
+.problemInner {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+.problem h2 {
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+.problem p {
+  font-size: 17px;
+  color: var(--warm-gray);
+  line-height: 1.65;
+}

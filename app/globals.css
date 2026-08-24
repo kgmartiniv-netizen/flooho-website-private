@@ -1,0 +1,178 @@
+/* =========================================================
+   FLOOHO DESIGN SYSTEM
+   Ported from flooho_design_system.css (source of truth from
+   the brand/design session). Colors, typography, and shared
+   component classes (nav, buttons, icon badges, cards, form
+   elements) live here — edit here first when changing anything
+   visual, same rule as the original handoff file.
+   ========================================================= */
+
+:root {
+  /* Color tokens */
+  --charcoal: #2c2c2a; /* primary surface / cards */
+  --charcoal-deep: #1a1a18; /* page background, inputs */
+  --coral: #f0997b; /* primary accent, icons, CTAs */
+  --coral-deep: #d85a30; /* hover/pressed state */
+  --coral-text-on: #4a1b0c; /* text on coral fills */
+  --warm-white: #f1efe8; /* primary text on charcoal */
+  --warm-gray: #b4b2a9; /* secondary/body text */
+  --warm-gray-muted: #888780; /* tertiary/label text */
+  --border-subtle: #5f5e5a; /* button borders, dividers */
+  --border-hairline: #444441; /* card/section dividers */
+  --border-faint: #33332f; /* section separators */
+
+  /* Typography */
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  background: var(--charcoal-deep);
+  font-family: var(--font-body);
+  color: var(--warm-white);
+}
+
+a {
+  color: inherit;
+}
+
+/* ---------- NAV (shared across all pages) ---------- */
+nav {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo-row span {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+nav .cta-nav {
+  background: transparent;
+  border: 0.5px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 9px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--warm-white);
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* ---------- BUTTONS (shared) ---------- */
+.btn-primary {
+  background: var(--coral);
+  color: var(--coral-text-on);
+  border: none;
+  border-radius: 8px;
+  padding: 14px 26px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+}
+.btn-primary:hover {
+  background: var(--coral-deep);
+}
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.btn-secondary {
+  background: transparent;
+  border: 0.5px solid var(--border-subtle);
+  color: var(--warm-white);
+  border-radius: 8px;
+  padding: 14px 26px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* ---------- ICON BADGE (shared — step icons, detail icons) ---------- */
+.icon-badge {
+  border-radius: 50%;
+  background: var(--coral-text-on);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.icon-badge svg {
+  stroke: var(--coral);
+}
+
+/* ---------- CARD (shared — step cards, form panels, detail panels) ---------- */
+.card {
+  background: var(--charcoal);
+  border-radius: 12px;
+  padding: 32px 24px;
+}
+
+/* ---------- SECTION SPACING ---------- */
+.section-tight {
+  padding: 56px 24px;
+}
+.section-default {
+  padding: 96px 24px;
+}
+.section-wide {
+  padding: 96px 24px 120px;
+}
+
+/* ---------- FORM ELEMENTS (shared) ---------- */
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--warm-gray);
+  margin-bottom: 8px;
+}
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  background: var(--charcoal-deep);
+  border: 0.5px solid var(--border-hairline);
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 14px;
+  color: var(--warm-white);
+  font-family: inherit;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--coral);
+}
+.form-group textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+/* honeypot field: present for bots, hidden from real users */
+.form-group-hidden {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}

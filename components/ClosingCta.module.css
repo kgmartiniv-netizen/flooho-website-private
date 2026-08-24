@@ -1,0 +1,16 @@
+.closingCta {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 96px 24px 120px;
+  text-align: center;
+}
+.closingCta p {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.35;
+  margin-bottom: 32px;
+}
+.closingCta :global(.btn-primary) {
+  padding: 15px 30px;
+  font-size: 15px;
+}
