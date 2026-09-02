@@ -33,11 +33,11 @@ export default function SolutionsPage() {
             <span>— [signal/marker 3]</span>
           </div>
         </div>
-        <div className={styles.trackVisual}>[visual/icon placeholder]</div>
+        <div className="card-media">[visual/icon placeholder]</div>
       </section>
 
       <section id="gtm-strategy" className={styles.track}>
-        <div className={styles.trackVisual}>[visual/icon placeholder]</div>
+        <div className="card-media">[visual/icon placeholder]</div>
         <div className={styles.trackContent}>
           <h2>Strategy &amp; Go-to-Market</h2>
           <p>

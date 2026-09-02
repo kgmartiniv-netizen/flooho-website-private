@@ -112,9 +112,9 @@
 }
 
 .mobilePanel {
-  /* Only shown under the 720px breakpoint below. Default to none (rather
-     than a min-width: 721px query to hide it on desktop) so there is
-     exactly one breakpoint in this file. */
+  /* Only shown under the 720px breakpoint below. Defaults to hidden
+     (rather than a second, wider query to hide it on desktop) so there
+     is exactly one breakpoint in this file. */
   display: none;
   flex-direction: column;
   padding: 4px 24px 20px;

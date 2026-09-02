@@ -50,18 +50,6 @@
   font-size: 14px;
   color: var(--text-muted);
 }
-.trackVisual {
-  background: var(--surface-page);
-  border: 1px dashed var(--border-hairline);
-  border-radius: 12px;
-  min-height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-muted);
-  font-size: 13px;
-}
-
 .closingCta {
   max-width: var(--container-narrow);
   margin: 0 auto;
