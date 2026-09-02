@@ -29,11 +29,11 @@ const DETAILS = [
 
 export default function ContactDetails() {
   return (
-    <div className={`card ${styles.detailsPanel}`}>
-      <p className={styles.placeholderFlag}>Placeholder — replace before launch</p>
+    <div className={`card card-panel ${styles.detailsPanel}`}>
+      <p className={`type-label ${styles.placeholderFlag}`}>Placeholder — replace before launch</p>
       {DETAILS.map((detail) => (
         <div key={detail.label} className={styles.detailItem}>
-          <div className="icon-badge">{detail.icon}</div>
+          <div className="icon-badge icon-badge-sm">{detail.icon}</div>
           <div>
             <h3>{detail.label}</h3>
             <p>{detail.value}</p>

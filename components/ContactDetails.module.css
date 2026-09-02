@@ -1,6 +1,5 @@
 .detailsPanel {
-  /* extends .card from globals.css */
-  padding: 36px 32px;
+  /* extends .card.card-panel — padding comes from there */
   display: flex;
   flex-direction: column;
   gap: 28px;
@@ -11,25 +10,20 @@
   gap: 14px;
   align-items: flex-start;
 }
-.detailItem :global(.icon-badge) {
-  width: 36px;
-  height: 36px;
-}
 .detailItem h3 {
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 500;
-  color: var(--warm-white);
+  line-height: 1.4;
+  color: var(--text-primary);
   margin-bottom: 4px;
 }
 .detailItem p {
   font-size: 14px;
-  color: var(--warm-gray);
+  color: var(--text-body);
   line-height: 1.5;
 }
+/* .type-label (global) covers size/weight/tracking/uppercase — this is
+   just the accent color on top of it. */
 .placeholderFlag {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
   color: var(--coral);
 }
