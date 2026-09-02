@@ -2,9 +2,9 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(44, 44, 42, 0.92);
+  background: var(--surface-overlay);
   backdrop-filter: blur(8px);
-  border-bottom: 1px solid #3a3a37;
+  border-bottom: 1px solid var(--border-hairline);
 }
 .navInner {
   max-width: 1100px;
@@ -24,7 +24,7 @@
   font-size: 18px;
   font-weight: 600;
   letter-spacing: 0.01em;
-  color: var(--warm-white);
+  color: var(--text-primary);
 }
 
 /* ---------- Desktop links ---------- */
@@ -39,14 +39,15 @@
 }
 .navLink {
   position: relative;
-  color: var(--warm-gray);
+  color: var(--text-body);
   text-decoration: none;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
+  transition: color var(--dur-instant) var(--ease-out);
 }
 .navLink:hover,
 .navLink.active {
-  color: var(--warm-white);
+  color: var(--text-primary);
 }
 .navLink.active::after {
   content: "";
@@ -59,7 +60,7 @@
 }
 .caret {
   font-size: 11px;
-  color: var(--warm-gray-muted);
+  color: var(--text-muted);
   margin-left: 2px;
 }
 
@@ -73,13 +74,13 @@
   top: 100%;
   left: -16px;
   margin-top: 14px;
-  background: var(--charcoal);
+  background: var(--surface-raised);
   border: 1px solid var(--border-hairline);
   border-radius: 8px;
   padding: 8px 0;
-  min-width: 170px;
+  min-width: 180px;
   list-style: none;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+  box-shadow: var(--shadow-dropdown);
   z-index: 10;
 }
 .hasDropdown:hover .dropdown,
@@ -90,12 +91,13 @@
   display: block;
   padding: 9px 18px;
   font-size: 14px;
-  color: var(--warm-gray);
+  color: var(--text-body);
   text-decoration: none;
+  transition: color var(--dur-instant) var(--ease-out);
 }
 .dropdown li a:hover {
-  background: var(--charcoal-deep);
-  color: var(--warm-white);
+  background: var(--surface-page);
+  color: var(--text-primary);
 }
 
 /* ---------- Mobile hamburger + panel ---------- */
@@ -103,29 +105,33 @@
   display: none;
   background: none;
   border: none;
-  color: var(--warm-white);
+  color: var(--text-primary);
   font-size: 22px;
   line-height: 1;
   cursor: pointer;
 }
 
 .mobilePanel {
-  display: flex;
+  /* Only shown under the 720px breakpoint below. Default to none (rather
+     than a min-width: 721px query to hide it on desktop) so there is
+     exactly one breakpoint in this file. */
+  display: none;
   flex-direction: column;
   padding: 4px 24px 20px;
   border-top: 1px solid var(--border-hairline);
 }
 .mobileLink {
   display: block;
-  color: var(--warm-gray);
+  color: var(--text-body);
   text-decoration: none;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
   padding: 14px 0;
   border-bottom: 1px solid var(--border-faint);
+  transition: color var(--dur-instant) var(--ease-out);
 }
 .mobileLink.active {
-  color: var(--warm-white);
+  color: var(--text-primary);
 }
 
 /* A dropdown item in the mobile panel: the link itself still navigates,
@@ -146,7 +152,7 @@
 .mobileToggle {
   background: none;
   border: none;
-  color: var(--warm-gray-muted);
+  color: var(--text-muted);
   padding: 0 4px 0 16px;
   cursor: pointer;
   display: flex;
@@ -155,7 +161,7 @@
 .mobileToggleIcon {
   display: inline-block;
   font-size: 12px;
-  transition: transform 0.15s ease;
+  transition: transform var(--dur-quick) var(--ease-out);
 }
 .mobileToggleIconOpen {
   transform: rotate(180deg);
@@ -168,7 +174,7 @@
   border-bottom: 1px solid var(--border-faint);
 }
 .mobileSubLink {
-  color: var(--warm-gray-muted);
+  color: var(--text-muted);
   text-decoration: none;
   font-size: 14px;
   padding: 8px 0;
@@ -181,9 +187,7 @@
   .menuBtn {
     display: block;
   }
-}
-@media (min-width: 721px) {
   .mobilePanel {
-    display: none;
+    display: flex;
   }
 }
