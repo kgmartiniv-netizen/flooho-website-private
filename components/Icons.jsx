@@ -47,6 +47,7 @@ export function SearchIcon() {
       height="24"
       viewBox="0 0 24 24"
       fill="none"
+      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -65,6 +66,7 @@ export function ReportIcon() {
       height="24"
       viewBox="0 0 24 24"
       fill="none"
+      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -85,6 +87,7 @@ export function CompassIcon() {
       height="24"
       viewBox="0 0 24 24"
       fill="none"
+      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -93,7 +96,7 @@ export function CompassIcon() {
       <circle cx="12" cy="12" r="9" />
       <polygon
         points="14.5,9.5 10.5,10.5 9.5,14.5 13.5,13.5"
-        style={{ fill: "var(--coral)" }}
+        style={{ fill: "currentColor" }}
         stroke="none"
       />
     </svg>
@@ -107,6 +110,7 @@ export function PhoneIcon() {
       height="18"
       viewBox="0 0 24 24"
       fill="none"
+      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -124,6 +128,7 @@ export function EmailIcon() {
       height="18"
       viewBox="0 0 24 24"
       fill="none"
+      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -142,6 +147,7 @@ export function MapPinIcon() {
       height="18"
       viewBox="0 0 24 24"
       fill="none"
+      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
