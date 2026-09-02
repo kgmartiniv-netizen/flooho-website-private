@@ -1,39 +1,32 @@
 .howItWorks {
-  max-width: 1000px;
+  max-width: var(--container-shell);
   margin: 0 auto;
   padding: 96px 24px;
 }
 .howItWorks h2 {
-  font-size: 30px;
-  font-weight: 600;
   text-align: center;
   margin-bottom: 56px;
 }
 .stepsGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  gap: 20px;
 }
 .stepCard {
-  /* extends .card from globals.css */
+  /* extends .card from globals.css — padding comes from there */
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   gap: 16px;
 }
-.stepIcon {
-  /* extends .icon-badge from globals.css */
-  width: 52px;
-  height: 52px;
-}
 .stepCard h3 {
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 500;
 }
 .stepCard p {
   font-size: 14px;
-  color: var(--warm-gray);
+  color: var(--text-body);
   line-height: 1.55;
 }
 

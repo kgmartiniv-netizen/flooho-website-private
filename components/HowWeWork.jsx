@@ -26,7 +26,7 @@ export default function HowWeWork() {
       <div className={styles.stepsGrid}>
         {STEPS.map((step) => (
           <div key={step.title} className={`card ${styles.stepCard}`}>
-            <div className={`icon-badge ${styles.stepIcon}`}>{step.icon}</div>
+            <div className="icon-badge">{step.icon}</div>
             <h3>{step.title}</h3>
             <p>{step.body}</p>
           </div>
