@@ -42,11 +42,11 @@ export default function ResourcesPage() {
           <HashLink
             key={cat.anchor}
             href={`/resources#${cat.anchor}`}
-            className={styles.categoryCard}
+            className={`card card-link ${styles.categoryCard}`}
           >
             <h3>{cat.title}</h3>
             <p>{cat.description}</p>
-            <span className={styles.tag}>Coming soon</span>
+            <span className="tag">Coming soon</span>
           </HashLink>
         ))}
       </div>
