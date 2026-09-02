@@ -10,7 +10,7 @@ export const metadata = {
 export default function ContactPage() {
   return (
     <>
-      <Nav variant="contact" />
+      <Nav />
 
       <section className={styles.pageHeader}>
         <h1>Let&apos;s talk.</h1>

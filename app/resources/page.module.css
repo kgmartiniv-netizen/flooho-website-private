@@ -1,0 +1,84 @@
+.pageHeader {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 56px 24px 8px;
+  text-align: center;
+}
+.pageHeader h1 {
+  font-size: 38px;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+.pageHeader p {
+  font-size: 16px;
+  color: var(--warm-gray);
+  line-height: 1.6;
+}
+
+.categories {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 56px 24px 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.categoryCard {
+  background: var(--charcoal);
+  border: 1px dashed var(--border-hairline);
+  border-radius: 12px;
+  padding: 36px 20px;
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  transition: border-color 0.15s ease;
+}
+.categoryCard:hover {
+  border-color: var(--warm-gray);
+}
+.categoryCard h3 {
+  font-size: 17px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.categoryCard p {
+  font-size: 13px;
+  color: var(--border-subtle);
+}
+.tag {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--coral);
+  border: 1px solid var(--coral);
+  border-radius: 20px;
+  padding: 3px 10px;
+  opacity: 0.8;
+}
+
+/* Anchor target sections — jumped to from the nav dropdown or the cards above. */
+.contentSection {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 48px 24px;
+  scroll-margin-top: 90px; /* offsets the sticky nav so anchor jumps land below it */
+  border-top: 1px solid var(--border-hairline);
+}
+.contentSection h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.contentSection p {
+  font-size: 15px;
+  color: var(--warm-gray);
+  line-height: 1.6;
+}
+
+@media (max-width: 700px) {
+  .categories {
+    grid-template-columns: 1fr;
+  }
+}

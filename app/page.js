@@ -7,7 +7,7 @@ import ClosingCta from "../components/ClosingCta";
 export default function LandingPage() {
   return (
     <>
-      <Nav variant="landing" />
+      <Nav />
       <Hero />
       <Problem />
       <HowWeWork />

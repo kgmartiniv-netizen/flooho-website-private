@@ -1,0 +1,86 @@
+.pageHeader {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 56px 24px 16px;
+  text-align: center;
+}
+.pageHeader h1 {
+  font-size: 38px;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+.pageHeader p {
+  font-size: 16px;
+  color: var(--warm-gray);
+  line-height: 1.6;
+}
+
+.track {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 64px 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+.track:nth-child(even) {
+  background: var(--charcoal);
+  border-radius: 16px;
+}
+.trackContent h2 {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.trackContent p {
+  font-size: 15px;
+  color: var(--warm-gray);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+.trackPlaceholderList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 12px;
+}
+.trackPlaceholderList span {
+  font-size: 13px;
+  color: var(--border-subtle);
+}
+.trackVisual {
+  background: var(--charcoal-deep);
+  border: 1px dashed var(--border-hairline);
+  border-radius: 12px;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--border-subtle);
+  font-size: 13px;
+}
+
+.closingCta {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 64px 24px 100px;
+  text-align: center;
+}
+.closingCta p {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+.closingCta :global(.btn-primary) {
+  padding: 13px 24px;
+}
+
+@media (max-width: 700px) {
+  .track {
+    grid-template-columns: 1fr;
+  }
+  .track > *:nth-child(2) {
+    order: -1;
+  }
+}
