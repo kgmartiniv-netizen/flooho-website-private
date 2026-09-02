@@ -1,5 +1,5 @@
 .pageHeader {
-  max-width: 640px;
+  max-width: var(--container-prose);
   margin: 0 auto;
   padding: 56px 24px 16px;
   text-align: center;
@@ -7,36 +7,36 @@
 .pageHeader h1 {
   font-size: 38px;
   font-weight: 600;
+  letter-spacing: -0.02em;
   margin-bottom: 14px;
 }
 .pageHeader p {
-  font-size: 16px;
-  color: var(--warm-gray);
+  font-size: 18px;
+  color: var(--text-body);
   line-height: 1.6;
 }
 
 .track {
-  max-width: 900px;
+  max-width: var(--container-grid);
   margin: 0 auto;
-  padding: 64px 24px;
+  padding: var(--space-24) 24px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
   align-items: center;
-  scroll-margin-top: 90px; /* offsets the sticky nav, same as Resources' anchors */
 }
 .track:nth-child(even) {
-  background: var(--charcoal);
-  border-radius: 16px;
+  background: var(--surface-raised);
+  border-radius: var(--radius-surface);
 }
 .trackContent h2 {
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 600;
   margin-bottom: 12px;
 }
 .trackContent p {
-  font-size: 15px;
-  color: var(--warm-gray);
+  font-size: 16px;
+  color: var(--text-body);
   line-height: 1.6;
   margin-bottom: 16px;
 }
@@ -47,37 +47,34 @@
   margin-top: 12px;
 }
 .trackPlaceholderList span {
-  font-size: 13px;
-  color: var(--border-subtle);
+  font-size: 14px;
+  color: var(--text-muted);
 }
 .trackVisual {
-  background: var(--charcoal-deep);
+  background: var(--surface-page);
   border: 1px dashed var(--border-hairline);
   border-radius: 12px;
   min-height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--border-subtle);
+  color: var(--text-muted);
   font-size: 13px;
 }
 
 .closingCta {
-  max-width: 500px;
+  max-width: var(--container-narrow);
   margin: 0 auto;
   padding: 64px 24px 100px;
   text-align: center;
 }
 .closingCta p {
-  font-size: 22px;
+  font-size: 30px;
   font-weight: 600;
   margin-bottom: 24px;
 }
-.closingCta :global(.btn-primary) {
-  padding: 13px 24px;
-}
 
-@media (max-width: 700px) {
+@media (max-width: 720px) {
   .track {
     grid-template-columns: 1fr;
   }
