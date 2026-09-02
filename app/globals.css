@@ -101,19 +101,6 @@
 
   /* ---------- ELEVATION ---------- */
   --shadow-dropdown: 0 12px 28px rgba(0, 0, 0, 0.35);
-
-  /* =========================================================
-     DEPRECATED ALIASES — delete after every module has migrated.
-     Nothing new should reference these.
-     ========================================================= */
-  --charcoal: var(--surface-raised);
-  --charcoal-deep: var(--surface-page);
-  --coral-text-on: var(--surface-ember);
-  --warm-white: var(--text-primary);
-  --warm-gray: var(--text-body);
-  --warm-gray-muted: var(--text-muted);
-  --red-core-deep: var(--red-deep);
-  /* --coral-deep is gone: declared in v1, never used. */
 }
 
 * {
