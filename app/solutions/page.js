@@ -19,7 +19,7 @@ export default function SolutionsPage() {
         </p>
       </section>
 
-      <section className={styles.track}>
+      <section id="process-automation" className={styles.track}>
         <div className={styles.trackContent}>
           <h2>Process &amp; Automation</h2>
           <p>
@@ -36,7 +36,7 @@ export default function SolutionsPage() {
         <div className={styles.trackVisual}>[visual/icon placeholder]</div>
       </section>
 
-      <section className={styles.track}>
+      <section id="gtm-strategy" className={styles.track}>
         <div className={styles.trackVisual}>[visual/icon placeholder]</div>
         <div className={styles.trackContent}>
           <h2>Strategy &amp; Go-to-Market</h2>

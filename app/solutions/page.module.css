@@ -23,6 +23,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 40px;
   align-items: center;
+  scroll-margin-top: 90px; /* offsets the sticky nav, same as Resources' anchors */
 }
 .track:nth-child(even) {
   background: var(--charcoal);
