@@ -1,4 +1,5 @@
 import { Archivo } from "next/font/google";
+import Footer from "../components/Footer";
 import "./globals.css";
 
 const archivo = Archivo({
@@ -16,7 +17,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={archivo.variable}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

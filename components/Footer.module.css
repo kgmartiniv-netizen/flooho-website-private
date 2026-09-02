@@ -1,0 +1,111 @@
+.footer {
+  background: var(--surface-raised);
+  border-top: 1px solid var(--border-hairline);
+}
+
+.footerGrid {
+  max-width: var(--container-shell);
+  margin: 0 auto;
+  padding: var(--space-14) var(--gutter) var(--space-8);
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: var(--space-10);
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 280px;
+}
+.brandLogo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.brandLogo span {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--text-primary);
+}
+.tagline {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-body);
+  margin: 0;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  /* 14px has no exact --space-* match (12 or 16 are neighbors) — kept
+     literal rather than visibly loosening/tightening the column rhythm. */
+  gap: 14px;
+}
+.columnLabel {
+  color: var(--text-muted);
+}
+.linkList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* same no-exact-token note as above */
+}
+.footerLink {
+  font-size: 14px;
+  color: var(--text-body);
+  text-decoration: none;
+  transition: color var(--dur-instant) var(--ease-out);
+}
+.footerLink:hover {
+  color: var(--text-primary);
+}
+/* Plain text, not a link — the address is a placeholder (see the flag
+   below it), so it shouldn't invite a real click before it's replaced. */
+.emailText {
+  font-size: 14px;
+  color: var(--coral);
+}
+.placeholderFlag {
+  color: var(--coral);
+}
+
+.bottomBar {
+  max-width: var(--container-shell);
+  margin: 0 auto;
+  padding: var(--gutter);
+  border-top: 1px solid var(--border-faint);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gutter);
+  flex-wrap: wrap;
+}
+.copyright {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+.legalLinks {
+  display: flex;
+  gap: var(--gutter);
+}
+.legalLink {
+  font-size: 14px;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color var(--dur-instant) var(--ease-out);
+}
+.legalLink:hover {
+  color: var(--text-primary);
+}
+
+@media (max-width: 720px) {
+  .footerGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .brand {
+    grid-column: 1 / -1;
+    max-width: none;
+  }
+}
