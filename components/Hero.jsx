@@ -4,7 +4,7 @@ import styles from "./Hero.module.css";
 export default function Hero() {
   return (
     <section className={styles.hero}>
-      <h1>Build your business of the future.</h1>
+      <h1 className="type-display">Build your business of the future.</h1>
       <p>Keep your company ahead of the pace of modern business.</p>
       <div className={styles.heroBtns}>
         <Link href="/contact" className="btn-primary">
