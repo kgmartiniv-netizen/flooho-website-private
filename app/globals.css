@@ -11,9 +11,11 @@
   /* Color tokens */
   --charcoal: #2c2c2a; /* primary surface / cards */
   --charcoal-deep: #1a1a18; /* page background, inputs */
-  --coral: #f0997b; /* primary accent, icons, CTAs */
-  --coral-deep: #d85a30; /* hover/pressed state */
-  --coral-text-on: #4a1b0c; /* text on coral fills */
+  --coral: #f0997b; /* secondary accent — icons, focus rings */
+  --coral-deep: #d85a30; /* hover/pressed state for coral fills */
+  --red-core: #e8432f; /* CTA fill — matches the vibrant core of the logo's gradient */
+  --red-core-deep: #b82614; /* hover/pressed state for red-core fills */
+  --coral-text-on: #4a1b0c; /* text on coral/red-core fills */
   --warm-white: #f1efe8; /* primary text on charcoal */
   --warm-gray: #b4b2a9; /* secondary/body text */
   --warm-gray-muted: #888780; /* tertiary/label text */
@@ -76,7 +78,7 @@ nav .cta-nav {
 
 /* ---------- BUTTONS (shared) ---------- */
 .btn-primary {
-  background: var(--coral);
+  background: var(--red-core);
   color: var(--coral-text-on);
   border: none;
   border-radius: 8px;
@@ -89,7 +91,7 @@ nav .cta-nav {
   text-align: center;
 }
 .btn-primary:hover {
-  background: var(--coral-deep);
+  background: var(--red-core-deep);
 }
 .btn-primary:disabled {
   opacity: 0.6;
