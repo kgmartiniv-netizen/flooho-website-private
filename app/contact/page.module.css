@@ -8,16 +8,17 @@
   font-size: 38px;
   font-weight: 600;
   line-height: 1.25;
+  letter-spacing: -0.02em;
   margin-bottom: 14px;
 }
 .pageHeader p {
-  font-size: 16px;
-  color: var(--warm-gray);
+  font-size: 18px;
+  color: var(--text-body);
   line-height: 1.6;
 }
 
 .contactWrap {
-  max-width: 980px;
+  max-width: var(--container-grid);
   margin: 0 auto;
   padding: 56px 24px 120px;
   display: grid;
