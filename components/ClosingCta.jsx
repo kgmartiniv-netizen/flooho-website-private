@@ -8,7 +8,7 @@ export default function ClosingCta() {
         Talk to us about where your business is headed — and how automation
         can help you get there faster.
       </p>
-      <Link href="/contact" className="btn-primary">
+      <Link href="/contact" className="btn-primary btn-lg">
         Let&apos;s talk
       </Link>
     </section>
