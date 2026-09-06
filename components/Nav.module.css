@@ -172,7 +172,7 @@
 }
 .mobileToggleIcon {
   display: inline-block;
-  font-size: 12px;
+  flex-shrink: 0;
   transition: transform var(--dur-quick) var(--ease-out);
 }
 .mobileToggleIconOpen {

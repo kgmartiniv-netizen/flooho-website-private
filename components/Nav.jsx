@@ -118,13 +118,11 @@ export default function Nav() {
                     aria-controls={`mobile-sub-${link.href}`}
                     onClick={() => toggleSection(link.href)}
                   >
-                    <span
+                    <ChevronDownIcon
                       className={`${styles.mobileToggleIcon} ${
                         expandedSections[link.href] ? styles.mobileToggleIconOpen : ""
                       }`}
-                    >
-                      ▾
-                    </span>
+                    />
                   </button>
                 </div>
                 {expandedSections[link.href] && (
