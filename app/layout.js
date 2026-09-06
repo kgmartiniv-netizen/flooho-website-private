@@ -20,19 +20,22 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={archivo.variable}>
-      {/* strategy="beforeInteractive" is what actually gets this hoisted
-          into <head> ahead of everything else and downloaded before page
-          hydration — matching GTM's own "as high in <head> as possible"
-          instruction. Placement in the JSX tree doesn't matter for this
-          strategy; Next.js always injects it into the initial HTML head. */}
-      <Script id="gtm-script" strategy="beforeInteractive">
-        {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      <body>
+        {/* strategy="afterInteractive" — Next's documented choice for
+            analytics/tag-manager scripts (beforeInteractive is reserved for
+            things that must block hydration, like consent gates, and in
+            App Router it renders this as an invalid child of <html>,
+            triggering a real hydration-mismatch warning). GTM's snippet is
+            inherently async and doesn't need pre-hydration execution to
+            work; this still loads it immediately after hydration, which is
+            as early as is practical in a React app. */}
+        <Script id="gtm-script" strategy="afterInteractive">
+          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','${GTM_ID}');`}
-      </Script>
-      <body>
+        </Script>
         {/* Immediately after the opening body tag, per GTM's install snippet. */}
         <noscript>
           <iframe

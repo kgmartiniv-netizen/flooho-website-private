@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LogoMark } from "./Icons";
+import { LogoMark, ChevronDownIcon } from "./Icons";
 import { handleAnchorLinkClick } from "../lib/scrollToHash";
 import styles from "./Nav.module.css";
 
@@ -57,7 +57,8 @@ export default function Nav() {
                   href={link.href}
                   className={`${styles.navLink} ${isActive(link.href) ? styles.active : ""}`}
                 >
-                  {link.label} <span className={styles.caret}>▾</span>
+                  {link.label}
+                  <ChevronDownIcon className={styles.caret} />
                 </Link>
                 <ul className={styles.dropdown}>
                   {link.dropdown.map((item) => (

@@ -158,3 +158,28 @@ export function MapPinIcon() {
     </svg>
   );
 }
+
+/* Nav dropdown chevron — from nav-chevron-down.svg. Decorative only; the
+   link text next to it carries the accessible name. Color and rotation
+   are driven by the parent (see .caret in Nav.module.css), stroke reads
+   currentColor so that works. */
+export function ChevronDownIcon({ className }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      width="16"
+      height="16"
+      aria-hidden="true"
+      focusable="false"
+      className={className}
+    >
+      <path d="M6 9l6 6 6-6" />
+    </svg>
+  );
+}
