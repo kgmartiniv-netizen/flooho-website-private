@@ -41,7 +41,7 @@
   position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 2px;
+  gap: 6px;
   color: var(--text-body);
   text-decoration: none;
   font-size: 16px;
@@ -113,14 +113,46 @@
 }
 
 /* ---------- Mobile hamburger + panel ---------- */
+/* 10px padding around a 24x24 icon = 44x44 total tap target. */
 .menuBtn {
   display: none;
+  align-items: center;
+  justify-content: center;
   background: none;
   border: none;
+  border-radius: var(--radius-control);
+  padding: 10px;
   color: var(--text-primary);
-  font-size: 22px;
-  line-height: 1;
   cursor: pointer;
+}
+.menuBtn svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+/* Bar classes come from MobileMenuIcon in Icons.jsx as plain (non-module)
+   class names specifically so they can be targeted here with :global(). */
+.menuBtn :global(.bar) {
+  /* SVG shape elements don't reliably accept CSS transform without an
+     explicit transform-box in some engines. view-box keeps "12px 12px"
+     meaning the icon's overall center (the 24x24 viewBox's own center) —
+     the same pivot for all three bars, which is what gives a properly
+     centered X rather than each bar spinning around its own bounding box
+     (which fill-box would do, and top/bottom aren't centered at y=12). */
+  transform-box: view-box;
+  transform-origin: 12px 12px;
+  transition:
+    transform var(--dur-moderate) var(--ease-in-out),
+    opacity var(--dur-quick) var(--ease-out);
+}
+.menuBtn[aria-expanded="true"] :global(.bar-top) {
+  transform: translateY(6px) rotate(45deg);
+}
+.menuBtn[aria-expanded="true"] :global(.bar-mid) {
+  opacity: 0;
+}
+.menuBtn[aria-expanded="true"] :global(.bar-bottom) {
+  transform: translateY(-6px) rotate(-45deg);
 }
 
 .mobilePanel {
@@ -197,7 +229,7 @@
     display: none;
   }
   .menuBtn {
-    display: block;
+    display: flex;
   }
   .mobilePanel {
     display: flex;

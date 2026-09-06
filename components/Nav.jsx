@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LogoMark, ChevronDownIcon } from "./Icons";
+import { LogoMark, ChevronDownIcon, MobileMenuIcon } from "./Icons";
 import { handleAnchorLinkClick } from "../lib/scrollToHash";
 import styles from "./Nav.module.css";
 
@@ -94,7 +94,7 @@ export default function Nav() {
           aria-controls="mobile-nav-panel"
           onClick={() => setMobileOpen((open) => !open)}
         >
-          {mobileOpen ? "✕" : "☰"}
+          <MobileMenuIcon />
         </button>
       </div>
 

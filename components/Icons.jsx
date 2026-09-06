@@ -183,3 +183,28 @@ export function ChevronDownIcon({ className }) {
     </svg>
   );
 }
+
+/* Mobile nav hamburger — from mobile-menu-icon.svg. Bar classes are
+   intentionally plain/global (not CSS-module scoped) so Nav.module.css
+   can target them with :global(.bar-top) etc. under
+   .menuBtn[aria-expanded="true"] to drive the X morph. Decorative only —
+   aria-label lives on the parent button. */
+export function MobileMenuIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false">
+      {/* Each bar is transformed via its wrapping <g>, not the <path>
+          itself — CSS transform on a bare SVG shape element is unreliable
+          in some engines, while a <g> (a proper container, not a shape)
+          transforms the same way any other element does. */}
+      <g className="bar bar-top">
+        <path d="M4 6h16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      </g>
+      <g className="bar bar-mid">
+        <path d="M4 12h16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      </g>
+      <g className="bar bar-bottom">
+        <path d="M4 18h16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      </g>
+    </svg>
+  );
+}
