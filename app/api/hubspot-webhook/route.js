@@ -3,15 +3,20 @@ import { verifyHubSpotSignature } from "../../../lib/hubspotWebhookSignature";
 import { refreshAccessToken } from "../../../lib/hubspotOAuth";
 import { getContact } from "../../../lib/hubspotCrm";
 import { findChannelByName, createChannel, postMessage } from "../../../lib/slack";
-import { findIssueByContactId, createIssue } from "../../../lib/jira";
+import { findEpicByCompanyLabel, createEpic } from "../../../lib/jira";
 
 /* FL-002 (HubSpot lead status change -> new Slack channel) and FL-003
-   (-> new Jira ticket) — event-driven replacement for the two polling
+   (-> new Jira Epic) — event-driven replacement for the two polling
    scheduled tasks (trig_017YGy99FJgyexZAUduc2vHF, trig_01TXGND1jwjFQk3rLxPNPyoW)
-   described in the project's flooho_feature_ideas.md. Same business rules
-   as the polling MVP: Slack channel created first, Jira ticket only after,
-   same dedup logic for each — just triggered by HubSpot's webhook instead
-   of checked three times a day.
+   described in the project's flooho_feature_ideas.md. Slack channel
+   created first, Jira Epic only after — both steps dedup per COMPANY
+   (not per contact/event): a second contact from a company that already
+   has a channel/Epic is a no-op. This diverges from the original polling
+   MVP's Jira behavior (which created one Task per contact under a fixed
+   parent epic KAN-20) — changed post-webhook-build per direct request:
+   one Epic per company instead, named "Customer Implementation
+   <CompanyName>", tagged via the company's slug in the Feature field
+   (customfield_10075) rather than KAN-20/"hubspot-connection".
 
    Next.js App Router route handlers don't auto-parse the body the way
    Pages Router API routes can — request.text() below already gives the
@@ -27,13 +32,18 @@ function slugify(input) {
     .replace(/^-+|-+$/g, "");
 }
 
-function buildChannelName({ company, firstname, lastname, email }) {
+// Shared base for both the Slack channel name and the Jira company label,
+// so the two stay obviously correlated (e.g. Slack "opportunity-acme-corp"
+// <-> Jira Feature label "acme-corp").
+function resolveCompanySlug({ company, firstname, lastname, email }) {
   const fullName = [firstname, lastname].filter(Boolean).join(" ").trim();
   const base = company?.trim() || fullName || email?.split("@")[0] || "unknown";
+  return slugify(base);
+}
+
+function buildChannelName(companySlug) {
   const prefix = "opportunity-";
-  const slug = slugify(base)
-    .slice(0, 80 - prefix.length)
-    .replace(/-+$/, "");
+  const slug = companySlug.slice(0, 80 - prefix.length).replace(/-+$/, "");
   return prefix + slug;
 }
 
@@ -48,9 +58,10 @@ async function processContact(objectId) {
   const { company, firstname, lastname, email } = properties || {};
   const fullName = [firstname, lastname].filter(Boolean).join(" ").trim() || "(no name)";
   const companyName = company?.trim() || fullName;
+  const companySlug = resolveCompanySlug({ company, firstname, lastname, email });
 
   // Step A — Slack, always first.
-  const channelName = buildChannelName({ company, firstname, lastname, email });
+  const channelName = buildChannelName(companySlug);
   let channel = await findChannelByName(channelName);
   if (!channel) {
     channel = await createChannel(channelName);
@@ -64,9 +75,11 @@ async function processContact(objectId) {
   }
 
   // Step B — Jira, only after Slack has been handled for this contact.
-  const alreadyTicketed = await findIssueByContactId(objectId);
-  if (!alreadyTicketed) {
-    await createIssue({ companyName, fullName, email, contactId: objectId });
+  // One Epic per company (by companySlug), not per contact — a second
+  // contact from a company that already has an Epic is a no-op here too.
+  const hasEpic = await findEpicByCompanyLabel(companySlug);
+  if (!hasEpic) {
+    await createEpic({ companyName, companySlug, fullName, email, contactId: objectId });
   }
 }
 
