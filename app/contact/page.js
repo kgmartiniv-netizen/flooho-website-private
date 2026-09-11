@@ -22,15 +22,16 @@ export default function ContactPage() {
       </section>
 
       <div className={styles.contactWrap}>
-        <ContactDetails />
+        <div className={styles.detailsColumn}>
+          <ContactDetails />
+          <section className={styles.booking}>
+            <h2>Want to Talk In Person</h2>
+            <p>Schedule time to discuss your business</p>
+            <BookingButton className="btn-primary btn-lg" label="Book a time" />
+          </section>
+        </div>
         <ContactForm />
       </div>
-
-      <section className={styles.booking}>
-        <h2>Prefer to talk live?</h2>
-        <p>Grab a time on the calendar — no form required.</p>
-        <BookingButton className="btn-primary btn-lg" label="Book a time" />
-      </section>
     </>
   );
 }
