@@ -37,14 +37,12 @@
   text-align: center;
 }
 .booking h2 {
-  /* Heading stays left-aligned; sized down from the default h2
-     (--type-section, 30px) — at 30px this rarely fit this narrow card on
-     one line, and text-wrap:balance alone isn't enough on browsers that
-     don't support it (e.g. pre-17.5 Safari). --type-subsection fits on
-     one line at nearly every width. */
+  /* Sized down from the default h2 (--type-section, 30px) — at 30px this
+     rarely fit this narrow card on one line, and text-wrap:balance alone
+     isn't enough on browsers that don't support it (e.g. pre-17.5 Safari).
+     --type-subsection fits on one line at nearly every width. */
   font: var(--type-subsection);
   margin-bottom: 12px;
-  text-align: left;
   text-wrap: balance;
 }
 .booking p {
