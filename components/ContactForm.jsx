@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import styles from "./ContactForm.module.css";
 
 export default function ContactForm() {
   const [status, setStatus] = useState({ type: null, message: "" });
@@ -35,8 +36,8 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="card card-panel">
-      <form onSubmit={handleSubmit}>
+    <div className={`card card-panel ${styles.card}`}>
+      <form onSubmit={handleSubmit} className={styles.form}>
         <div className="form-row">
           <div className="form-group">
             <label htmlFor="firstname">First name</label>
@@ -59,7 +60,7 @@ export default function ContactForm() {
           </div>
         </div>
 
-        <div className="form-group">
+        <div className={`form-group ${styles.messageGroup}`}>
           <label htmlFor="message">What&apos;s on your mind?</label>
           <textarea
             id="message"

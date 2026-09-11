@@ -33,8 +33,8 @@
 }
 
 .booking {
-  /* extends .card.card-panel — background/radius/padding come from there */
-  text-align: center;
+  /* extends .card.card-panel — background/radius/padding come from there.
+     Left-aligned to match ContactDetails directly above it in this column. */
 }
 .booking h2 {
   margin-bottom: 12px;
