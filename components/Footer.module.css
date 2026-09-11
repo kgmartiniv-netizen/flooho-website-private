@@ -61,14 +61,14 @@
 .footerLink:hover {
   color: var(--text-primary);
 }
-/* Plain text, not a link — the address is a placeholder (see the flag
-   below it), so it shouldn't invite a real click before it's replaced. */
-.emailText {
+.emailLink {
   font-size: 14px;
   color: var(--coral);
+  text-decoration: none;
+  transition: color var(--dur-instant) var(--ease-out);
 }
-.placeholderFlag {
-  color: var(--coral);
+.emailLink:hover {
+  color: var(--text-primary);
 }
 
 .bottomBar {

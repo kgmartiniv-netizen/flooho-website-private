@@ -50,13 +50,11 @@ export default function Footer() {
             <Link href="/contact" className={styles.footerLink}>
               Contact Us
             </Link>
-            {/* Placeholder address, same as the contact page's flagged
-                phone/email/office — plain text, not a mailto link, until
-                it's replaced with a real one. */}
-            <span className={styles.emailText}>hello@flooho.com</span>
-            <span className={`type-label ${styles.placeholderFlag}`}>
-              Placeholder — replace before launch
-            </span>
+            {/* Live as of 2026-09-10 — a real mailto link now, matching
+                the contact page. */}
+            <a href="mailto:hello@flooho.com" className={styles.emailLink}>
+              hello@flooho.com
+            </a>
           </div>
         </div>
       </div>
