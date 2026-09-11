@@ -38,6 +38,7 @@
 }
 .booking h2 {
   margin-bottom: 12px;
+  text-wrap: balance;
 }
 .booking p {
   margin-bottom: 24px;
