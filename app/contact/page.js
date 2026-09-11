@@ -24,9 +24,9 @@ export default function ContactPage() {
       <div className={styles.contactWrap}>
         <div className={styles.detailsColumn}>
           <ContactDetails />
-          <section className={styles.booking}>
-            <h2>Want to Talk In Person</h2>
-            <p>Schedule time to discuss your business</p>
+          <section className={`card card-panel ${styles.booking}`}>
+            <h2>Want to talk in person?</h2>
+            <p>Schedule time with one of Flooho&apos;s experts.</p>
             <BookingButton className="btn-primary btn-lg" label="Book a time" />
           </section>
         </div>

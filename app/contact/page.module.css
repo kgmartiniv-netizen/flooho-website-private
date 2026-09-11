@@ -33,6 +33,7 @@
 }
 
 .booking {
+  /* extends .card.card-panel — background/radius/padding come from there */
   text-align: center;
 }
 .booking h2 {
@@ -45,5 +46,12 @@
 @media (max-width: 720px) {
   .contactWrap {
     grid-template-columns: 1fr;
+  }
+  /* Mobile order: form, then contact info, then scheduling. */
+  .contactWrap > *:nth-child(1) {
+    order: 2;
+  }
+  .contactWrap > *:nth-child(2) {
+    order: 1;
   }
 }
