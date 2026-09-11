@@ -20,10 +20,23 @@
 .contactWrap {
   max-width: var(--container-grid);
   margin: 0 auto;
-  padding: 56px 24px 120px;
+  padding: 56px 24px 64px;
   display: grid;
   grid-template-columns: 1fr 1.3fr;
   gap: 40px;
+}
+
+.booking {
+  max-width: var(--container-narrow);
+  margin: 0 auto;
+  padding: 0 24px 120px;
+  text-align: center;
+}
+.booking h2 {
+  margin-bottom: 12px;
+}
+.booking p {
+  margin-bottom: 24px;
 }
 
 @media (max-width: 720px) {
