@@ -5,66 +5,141 @@
   text-align: center;
 }
 .pageHeader h1 {
-  font-size: 38px;
-  font-weight: 600;
-  letter-spacing: -0.02em;
   margin-bottom: 14px;
 }
 .pageHeader p {
-  font-size: 18px;
+  font-size: 16px;
   color: var(--text-body);
   line-height: 1.6;
 }
 
-.track {
+/* ---- Track shell (shared by both tracks) ---- */
+.trackShell {
+  padding: var(--space-14) var(--gutter);
+}
+.trackShell:nth-of-type(even) {
+  background: var(--surface-raised);
+}
+.trackInner {
   max-width: var(--container-grid);
   margin: 0 auto;
-  padding: var(--space-24) 24px;
+}
+.trackHeading {
+  text-align: center;
+  margin-bottom: var(--space-2);
+}
+.trackHeading h2 {
+  font-size: 28px;
+  margin-bottom: var(--space-3);
+}
+.trackHeading p {
+  font-size: 15px;
+  color: var(--text-body);
+  line-height: 1.6;
+  max-width: var(--container-prose);
+  margin: 0 auto;
+}
+
+/* ---- Workflow Automation: vertical grid ---- */
+.verticalGrid {
+  margin-top: var(--space-10);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-5);
+}
+.verticalCard {
+  background: var(--surface-page);
+  border: 1px dashed var(--border-hairline);
+  border-radius: var(--radius-surface);
+  padding: 28px 18px;
+  text-align: center;
+}
+.verticalCard h3 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: var(--space-2);
+}
+.verticalCard p {
+  font-size: 13px;
+  color: var(--border-subtle);
+  line-height: 1.5;
+}
+.verticalCardLive {
+  background: var(--surface-raised);
+  border: 1px solid var(--border-subtle);
+  text-align: left;
+}
+.verticalCardLive h3 {
+  font-size: 17px;
+}
+.verticalCardLive p {
+  color: var(--text-body);
+  font-size: 14px;
+}
+.verticalCardLive a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+  color: var(--coral);
+  font-size: 13px;
+  font-weight: 600;
+}
+.verticalCardLive a:hover {
+  color: var(--red-core);
+}
+
+/* ---- Strategy track (existing 2-col pattern, kept) ---- */
+.track {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
   align-items: center;
-}
-.track:nth-child(even) {
-  background: var(--surface-raised);
-  border-radius: var(--radius-surface);
-}
-.trackContent h2 {
-  font-size: 24px;
-  font-weight: 600;
-  margin-bottom: 12px;
+  margin-top: var(--space-10);
 }
 .trackContent p {
-  font-size: 16px;
+  font-size: 15px;
   color: var(--text-body);
   line-height: 1.6;
-  margin-bottom: 16px;
+  margin-bottom: var(--space-4);
 }
 .trackPlaceholderList {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  margin-top: 12px;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
 }
 .trackPlaceholderList span {
-  font-size: 14px;
-  color: var(--text-muted);
+  font-size: 13px;
+  color: var(--border-subtle);
 }
+
 .closingCta {
   max-width: var(--container-narrow);
   margin: 0 auto;
-  padding: 64px 24px 100px;
+  padding: var(--space-14) var(--gutter) 100px;
   text-align: center;
 }
 .closingCta p {
-  font-size: 30px;
+  font-size: 22px;
   font-weight: 600;
-  margin-bottom: 24px;
+  margin-bottom: var(--space-6);
 }
 
+@media (max-width: 900px) {
+  .verticalGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 @media (max-width: 720px) {
+  .verticalGrid {
+    grid-template-columns: 1fr;
+  }
   .track {
     grid-template-columns: 1fr;
+  }
+  .track > *:nth-child(1) {
+    order: 1;
   }
   .track > *:nth-child(2) {
     order: -1;

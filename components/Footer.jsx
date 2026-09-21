@@ -20,11 +20,11 @@ export default function Footer() {
         <div className={styles.column}>
           <span className={`type-label ${styles.columnLabel}`}>Solutions</span>
           <div className={styles.linkList}>
-            <HashLink href="/solutions#process-automation" className={styles.footerLink}>
-              Process &amp; Workflow Automation
+            <HashLink href="/solutions#workflow-automation" className={styles.footerLink}>
+              Workflow Automation
             </HashLink>
-            <HashLink href="/solutions#gtm-strategy" className={styles.footerLink}>
-              GTM &amp; Product Strategy
+            <HashLink href="/solutions#strategy-advisory" className={styles.footerLink}>
+              Strategy Advisory
             </HashLink>
           </div>
         </div>

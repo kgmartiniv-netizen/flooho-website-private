@@ -8,8 +8,8 @@ import { handleAnchorLinkClick } from "../lib/scrollToHash";
 import styles from "./Nav.module.css";
 
 const SOLUTIONS_DROPDOWN = [
-  { href: "/solutions#process-automation", label: "Process & Workflow Automation" },
-  { href: "/solutions#gtm-strategy", label: "GTM & Product Strategy" },
+  { href: "/solutions#workflow-automation", label: "Workflow Automation" },
+  { href: "/solutions#strategy-advisory", label: "Strategy Advisory" },
 ];
 
 const RESOURCES_DROPDOWN = [

@@ -1,0 +1,430 @@
+.breadcrumb {
+  max-width: var(--container-grid);
+  margin: 0 auto;
+  padding: var(--space-8) var(--gutter) 0;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.breadcrumb a {
+  color: var(--text-muted);
+}
+.breadcrumb a:hover {
+  color: var(--text-primary);
+}
+
+/* ---------- PAIN ---------- */
+.pain {
+  max-width: var(--container-grid);
+  margin: 0 auto;
+  padding: var(--space-14) var(--gutter) var(--space-24);
+}
+.pain h1 {
+  text-align: center;
+  max-width: var(--container-prose);
+  margin: 0 auto var(--space-14);
+}
+.statGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+.statCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.statIcon {
+  width: 48px;
+  height: 48px;
+}
+.statHr {
+  width: 32px;
+  height: 2px;
+  background: var(--border-subtle);
+}
+.statCard h3 {
+  font: 500 15px/1.4 var(--font-body);
+  color: var(--text-body);
+}
+.statNumber {
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--red-core);
+  line-height: 1;
+}
+.statCaption {
+  font-size: 11px;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--border-subtle);
+}
+.statConsequence {
+  font-size: 14px;
+  color: var(--text-body);
+  line-height: 1.5;
+  margin-top: var(--space-1);
+}
+.painFooter {
+  text-align: center;
+  margin-top: var(--space-10);
+  font-size: 14px;
+  color: var(--text-body);
+}
+.painFooterLink {
+  color: var(--coral);
+  font-weight: 600;
+}
+.painFooterLink:hover {
+  color: var(--red-core);
+}
+.painFooterNote {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* ---------- PRINCIPLE STRIP ---------- */
+.principle {
+  max-width: var(--container-narrow);
+  margin: 0 auto;
+  padding: 0 var(--gutter) var(--space-24);
+  text-align: center;
+}
+.principle p {
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+.accent {
+  color: var(--coral);
+}
+
+/* ---------- GAP ---------- */
+.gap {
+  background: var(--surface-raised);
+  padding: var(--space-24) var(--gutter);
+}
+.gapInner {
+  max-width: var(--container-prose);
+  margin: 0 auto;
+}
+.gapCols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-10);
+  margin-bottom: var(--space-10);
+}
+.gapColLabel {
+  font-size: 12px;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-align: center;
+  margin-bottom: var(--space-6);
+}
+.gapColActual .gapColLabel {
+  color: var(--coral);
+}
+.timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.timelineNode {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.timelineNode.warn {
+  border: 1px dashed var(--red-core);
+  color: var(--red-core);
+}
+.timelineConnector {
+  width: 1px;
+  height: 28px;
+  background: var(--border-hairline);
+}
+.timelineCaption {
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: var(--space-2);
+  text-align: center;
+  color: var(--text-primary);
+}
+.timelineCaption.warn {
+  color: var(--coral);
+}
+.timelineNote {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: var(--space-1);
+}
+.gap h2 {
+  font-size: 30px;
+  text-align: center;
+  line-height: 1.35;
+}
+
+/* ---------- TRIGGER ---------- */
+.trigger {
+  max-width: var(--container-prose);
+  margin: 0 auto;
+  padding: var(--space-24) var(--gutter);
+  text-align: center;
+}
+.triggerKicker {
+  font-size: 12px;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: var(--space-4);
+}
+.trigger h2 {
+  margin-bottom: var(--space-10);
+}
+.triggerFlow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+.triggerPill {
+  background: var(--surface-raised);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-pill);
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.triggerPillSignal {
+  border-color: var(--coral);
+  color: var(--coral);
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+.triggerArrow {
+  color: var(--border-subtle);
+  font-size: 18px;
+}
+.triggerOutputs {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-top: var(--space-6);
+}
+.triggerChip {
+  font-size: 13px;
+  color: var(--text-body);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-pill);
+  padding: 8px 16px;
+}
+
+/* ---------- WORKFLOWS ---------- */
+.workflows {
+  max-width: var(--container-grid);
+  margin: 0 auto;
+  padding: var(--space-24) var(--gutter);
+}
+.workflows h2 {
+  text-align: center;
+  margin-bottom: var(--space-3);
+}
+.workflows > p {
+  text-align: center;
+  color: var(--text-body);
+  font-size: 15px;
+  margin-bottom: var(--space-10);
+}
+.workflowRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  margin-bottom: var(--space-5);
+}
+.workflowPain {
+  flex: 0 0 220px;
+  background: var(--surface-raised);
+  border-radius: 10px;
+  border-left: 3px solid var(--coral);
+  padding: var(--space-4) 18px;
+}
+.workflowPain span {
+  font-size: 11px;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--coral);
+}
+.workflowPain p {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-top: var(--space-1);
+}
+.workflowArrow {
+  color: var(--border-subtle);
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.workflowCard {
+  flex: 1;
+  background: var(--surface-raised);
+  border: 1px solid var(--border-hairline);
+  border-radius: 10px;
+  padding: var(--space-5) 22px;
+}
+.workflowCardTop {
+  margin-bottom: var(--space-2);
+}
+.workflowCardTop span {
+  font-size: 11px;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.workflowCard h3 {
+  font-size: 17px;
+  margin-bottom: var(--space-2);
+}
+.workflowCard p {
+  font-size: 14px;
+  color: var(--text-body);
+  line-height: 1.5;
+}
+
+/* ---------- PROOF ---------- */
+.proof {
+  background: var(--surface-raised);
+  padding: var(--space-24) var(--gutter);
+}
+.proofInner {
+  max-width: var(--container-grid);
+  margin: 0 auto;
+  text-align: center;
+}
+.proof h2 {
+  margin-bottom: var(--space-3);
+}
+.proofInner > p {
+  color: var(--text-body);
+  font-size: 15px;
+  margin-bottom: var(--space-10);
+}
+.mockPanel {
+  background: var(--surface-page);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-surface);
+  max-width: 480px;
+  margin: 0 auto;
+  text-align: left;
+  overflow: hidden;
+}
+.mockPanelHead {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 12px var(--space-4);
+  border-bottom: 1px solid var(--border-hairline);
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.mockDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--border-subtle);
+  display: inline-block;
+}
+.mockPanelLabel {
+  margin-left: var(--space-2);
+}
+.mockPanelBody {
+  padding: var(--space-5);
+}
+.mockLine {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+.mockLine:last-child {
+  margin-bottom: 0;
+}
+.mockCheck {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  background: rgba(240, 153, 123, 0.15);
+  color: var(--coral);
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.mockLine strong {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.mockLine p {
+  font-size: 13px;
+  color: var(--text-body);
+  margin-top: 2px;
+}
+
+/* ---------- PROMISE / CLOSING ---------- */
+.closingCta {
+  max-width: var(--container-narrow);
+  margin: 0 auto;
+  padding: var(--space-24) var(--gutter) var(--space-30);
+  text-align: center;
+}
+.promiseLines {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--text-primary);
+  margin-bottom: var(--space-3);
+}
+.promiseSub {
+  font-size: 15px;
+  color: var(--text-body);
+  margin-bottom: var(--space-8);
+}
+
+@media (max-width: 720px) {
+  .statGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+  .gapCols {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+  .workflowRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .workflowPain {
+    flex: none;
+  }
+  .workflowArrow {
+    transform: rotate(90deg);
+    text-align: center;
+  }
+  .pain h1 {
+    font-size: 30px;
+  }
+}
