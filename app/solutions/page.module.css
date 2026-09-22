@@ -92,29 +92,45 @@
   color: var(--red-core);
 }
 
-/* ---- Strategy track (existing 2-col pattern, kept) ---- */
-.track {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: center;
+/* ---- Strategy Advisory: fractional-role cards ---- */
+.roleGrid {
   margin-top: var(--space-10);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
 }
-.trackContent p {
-  font-size: 15px;
+.roleCard {
+  background: var(--surface-page);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-surface);
+  padding: var(--space-8) var(--space-6);
+  text-align: left;
+}
+.roleIcon {
+  margin-bottom: var(--space-5);
+}
+.roleCard h3 {
+  font-size: 18px;
+  margin-bottom: var(--space-3);
+  line-height: 1.3;
+}
+.roleCard p {
   color: var(--text-body);
+  font-size: 14px;
   line-height: 1.6;
-  margin-bottom: var(--space-4);
 }
-.trackPlaceholderList {
+.roleChips {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: var(--space-2);
-  margin-top: var(--space-3);
+  margin-top: var(--space-5);
 }
-.trackPlaceholderList span {
-  font-size: 13px;
-  color: var(--border-subtle);
+.roleChips span {
+  font-size: 11px;
+  color: var(--text-body);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-pill);
+  padding: 5px 12px;
 }
 
 .closingCta {
@@ -129,19 +145,18 @@
   margin-bottom: var(--space-6);
 }
 
+@media (max-width: 900px) {
+  .roleGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 @media (max-width: 760px) {
   .verticalGrid {
     grid-template-columns: 1fr;
   }
 }
-@media (max-width: 720px) {
-  .track {
+@media (max-width: 600px) {
+  .roleGrid {
     grid-template-columns: 1fr;
-  }
-  .track > *:nth-child(1) {
-    order: 1;
-  }
-  .track > *:nth-child(2) {
-    order: -1;
   }
 }

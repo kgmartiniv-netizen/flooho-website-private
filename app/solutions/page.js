@@ -1,10 +1,18 @@
 import Link from "next/link";
 import Nav from "../../components/Nav";
-import { FunnelIcon, ClipboardCheckIcon } from "../../components/Icons";
+import {
+  FunnelIcon,
+  ClipboardCheckIcon,
+  BullseyeIcon,
+  FlagIcon,
+  HubSpokeIcon,
+} from "../../components/Icons";
 import styles from "./page.module.css";
 
 export const metadata = {
   title: "Flooho — Solutions",
+  description:
+    "AI workflow automation for GTM and product teams, plus fractional sales strategy & ops, product strategy & roadmap, and chief of staff support.",
 };
 
 // Engineering and Marketing are deferred, not cancelled — they'll return as
@@ -26,6 +34,31 @@ const VERTICALS = [
     body: "Roadmap hygiene, spec-to-ticket handoff, and status reporting — automated for PM teams buried in updates instead of building.",
     chips: ["Roadmap sync", "Spec-to-ticket", "Status digest"],
     href: "/solutions/product-management-automation",
+  },
+];
+
+// Track name stays "Strategy Advisory" — a final decision, not a
+// placeholder. The fractional-role titles below carry the SEO/GEO weight
+// instead (crawlable h3 text here + the page's meta description), so don't
+// swap the section name for "Fractional Leadership/Strategy" or similar.
+const ROLES = [
+  {
+    title: "Fractional Sales Strategy & Ops",
+    icon: <BullseyeIcon />,
+    body: "Pipeline structure, comp design, and forecasting cadence, built and owned by someone who's done it before.",
+    chips: ["Pipeline & process", "Forecasting cadence", "Comp design"],
+  },
+  {
+    title: "Fractional Product Strategy & Roadmap",
+    icon: <FlagIcon />,
+    body: "Roadmap prioritization, positioning calls, and the sequencing decisions that shape what gets built next, handled with senior product judgment on a part-time cadence.",
+    chips: ["Roadmap prioritization", "Positioning", "Sequencing calls"],
+  },
+  {
+    title: "Fractional Chief of Staff",
+    icon: <HubSpokeIcon />,
+    body: "The person who turns strategy into execution across teams, running the cadence, chasing follow-through, and keeping the org honest about what's actually getting done.",
+    chips: ["Cross-team execution", "Meeting cadence", "Follow-through"],
   },
 ];
 
@@ -82,27 +115,30 @@ export default function SolutionsPage() {
         <div className={styles.trackInner}>
           <div className={styles.trackHeading}>
             <h2>Strategy Advisory</h2>
-            <p>
-              [Placeholder intro: for the strong idea with an unclear market
-              or roadmap — positioning, go-to-market planning, and the
-              strategic questions automation alone can&apos;t answer.]
-            </p>
+            <p>Get strategic planning and senior ownership as you need it.</p>
           </div>
-          <div className={styles.track}>
-            <div className="card-media">[visual/icon placeholder]</div>
-            <div className={styles.trackContent}>
-              <div className={styles.trackPlaceholderList}>
-                <span>— [signal/marker 1]</span>
-                <span>— [signal/marker 2]</span>
-                <span>— [signal/marker 3]</span>
+
+          <div className={styles.roleGrid}>
+            {ROLES.map((role) => (
+              <div className={styles.roleCard} key={role.title}>
+                <div className={`icon-badge ${styles.roleIcon}`} role="img" aria-label={role.title}>
+                  {role.icon}
+                </div>
+                <h3>{role.title}</h3>
+                <p>{role.body}</p>
+                <div className={styles.roleChips}>
+                  {role.chips.map((chip) => (
+                    <span key={chip}>{chip}</span>
+                  ))}
+                </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
       <section className={styles.closingCta}>
-        <p>Not sure which track fits? That&apos;s a strategy conversation in itself.</p>
+        <p>Not sure what you need? Let&apos;s figure it out together.</p>
         <Link href="/contact" className="btn-primary btn-lg">
           Let&apos;s talk
         </Link>

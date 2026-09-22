@@ -276,6 +276,71 @@ export function ClipboardCheckIcon() {
   );
 }
 
+export function BullseyeIcon() {
+  return (
+    <svg
+      width="26"
+      height="26"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <circle cx="12" cy="12" r="9" />
+      <circle cx="12" cy="12" r="5" />
+      <circle cx="12" cy="12" r="1.5" fill="var(--coral)" stroke="none" />
+    </svg>
+  );
+}
+
+export function FlagIcon() {
+  return (
+    <svg
+      width="26"
+      height="26"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" />
+      <line x1="4" y1="22" x2="4" y2="15" />
+    </svg>
+  );
+}
+
+export function HubSpokeIcon() {
+  return (
+    <svg
+      width="26"
+      height="26"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <circle cx="12" cy="12" r="2.5" />
+      <circle cx="12" cy="4" r="1.5" />
+      <circle cx="20" cy="12" r="1.5" />
+      <circle cx="12" cy="20" r="1.5" />
+      <circle cx="4" cy="12" r="1.5" />
+      <line x1="12" y1="9.5" x2="12" y2="5.5" />
+      <line x1="14.5" y1="12" x2="18.5" y2="12" />
+      <line x1="12" y1="14.5" x2="12" y2="18.5" />
+      <line x1="9.5" y1="12" x2="5.5" y2="12" />
+    </svg>
+  );
+}
+
 /* Nav dropdown chevron — from nav-chevron-down.svg. Decorative only; the
    link text next to it carries the accessible name. Color and rotation
    are driven by the parent (see .caret in Nav.module.css), stroke reads
