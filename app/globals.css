@@ -429,6 +429,27 @@ a.link-accent {
   }
 }
 
+/* ---------- GOOGLE CALENDAR BOOKING POPUP (KAN-38) ----------
+   Google's "Button with Popup" widget appends its modal straight to
+   <body>, outside our React tree, with obfuscated class names that can
+   change on their end without warning — hence the attribute selector
+   fallback alongside the current class, rather than relying on the class
+   alone. The iframe itself paints transparent, letting the page behind it
+   (our contact form, its red submit button) show through the calendar UI.
+   Forcing an opaque white card + light color-scheme fixes that regardless
+   of the site's own dark theme. */
+iframe.mmGMM,
+body > div > iframe[src*="calendar.google.com"] {
+  background: #fff;
+  color-scheme: light;
+  border-radius: 12px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.45);
+}
+/* Dim the backdrop Google renders behind the popup to match our dark theme. */
+.hur54b {
+  background: rgba(10, 10, 12, 0.8) !important;
+}
+
 /* ---------- REDUCED MOTION ----------
    1ms, not 0 — transitionend still fires, so anything
    listening for it keeps working. */
