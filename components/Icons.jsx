@@ -238,6 +238,44 @@ export function ChartAxisIcon() {
   );
 }
 
+export function FunnelIcon() {
+  return (
+    <svg
+      width="30"
+      height="30"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M3 4h18l-7 9v6l-4 2v-8z" />
+    </svg>
+  );
+}
+
+export function ClipboardCheckIcon() {
+  return (
+    <svg
+      width="30"
+      height="30"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <rect x="6" y="3" width="12" height="18" rx="2" />
+      <path d="M9 3V2a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1" />
+      <path d="M9 12l2 2 4-4" />
+    </svg>
+  );
+}
+
 /* Nav dropdown chevron — from nav-chevron-down.svg. Decorative only; the
    link text next to it carries the accessible name. Color and rotation
    are driven by the parent (see .caret in Nav.module.css), stroke reads

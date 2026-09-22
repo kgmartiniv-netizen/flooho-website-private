@@ -267,6 +267,10 @@ a.link-accent {
   width: 36px;
   height: 36px;
 }
+.icon-badge-lg {
+  width: 64px;
+  height: 64px;
+}
 
 /* ---------- CARD ---------- */
 .card {

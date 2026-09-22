@@ -40,52 +40,55 @@
   margin: 0 auto;
 }
 
-/* ---- Workflow Automation: vertical grid ---- */
+/* ---- Workflow Automation: featured vertical cards ---- */
 .verticalGrid {
   margin-top: var(--space-10);
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-5);
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6);
 }
 .verticalCard {
-  background: var(--surface-page);
-  border: 1px dashed var(--border-hairline);
-  border-radius: var(--radius-surface);
-  padding: 28px 18px;
-  text-align: center;
-}
-.verticalCard h3 {
-  font-size: 16px;
-  font-weight: 500;
-  margin-bottom: var(--space-2);
-}
-.verticalCard p {
-  font-size: 13px;
-  color: var(--border-subtle);
-  line-height: 1.5;
-}
-.verticalCardLive {
   background: var(--surface-raised);
   border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-surface);
+  padding: 40px 36px;
   text-align: left;
 }
-.verticalCardLive h3 {
-  font-size: 17px;
+.verticalIcon {
+  margin-bottom: var(--space-6);
 }
-.verticalCardLive p {
+.verticalCard h3 {
+  font-size: 21px;
+  margin-bottom: var(--space-3);
+}
+.verticalCard p {
   color: var(--text-body);
-  font-size: 14px;
+  font-size: 15px;
+  line-height: 1.6;
 }
-.verticalCardLive a {
+.verticalChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-5);
+}
+.verticalChips span {
+  font-size: 12px;
+  color: var(--text-body);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-pill);
+  padding: 6px 14px;
+}
+.verticalLink {
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
-  margin-top: var(--space-4);
+  margin-top: var(--space-6);
   color: var(--coral);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
 }
-.verticalCardLive a:hover {
+.verticalLink:hover {
   color: var(--red-core);
 }
 
@@ -126,15 +129,12 @@
   margin-bottom: var(--space-6);
 }
 
-@media (max-width: 900px) {
-  .verticalGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (max-width: 720px) {
+@media (max-width: 760px) {
   .verticalGrid {
     grid-template-columns: 1fr;
   }
+}
+@media (max-width: 720px) {
   .track {
     grid-template-columns: 1fr;
   }

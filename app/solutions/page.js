@@ -1,33 +1,31 @@
 import Link from "next/link";
 import Nav from "../../components/Nav";
+import { FunnelIcon, ClipboardCheckIcon } from "../../components/Icons";
 import styles from "./page.module.css";
 
 export const metadata = {
   title: "Flooho — Solutions",
 };
 
+// Engineering and Marketing are deferred, not cancelled — they'll return as
+// their own featured cards once each has a real methodology page built (the
+// same way GTM and PM were), not before. No placeholder text anywhere on
+// the site for launch, so they're held back entirely rather than shown as
+// "coming soon" dashed tiles.
 const VERTICALS = [
   {
     name: "GTM Automation",
+    icon: <FunnelIcon />,
     body: "Pipeline hygiene, call notes, and prospecting — automated for sales teams buried in admin work instead of selling.",
+    chips: ["Pipeline hygiene", "Call notes", "Prospect research"],
     href: "/solutions/gtm-automation",
-    live: true,
   },
   {
     name: "Product Management",
+    icon: <ClipboardCheckIcon />,
     body: "Roadmap hygiene, spec-to-ticket handoff, and status reporting — automated for PM teams buried in updates instead of building.",
+    chips: ["Roadmap sync", "Spec-to-ticket", "Status digest"],
     href: "/solutions/product-management-automation",
-    live: true,
-  },
-  {
-    name: "Engineering",
-    body: "[Placeholder — deploy pipelines, review triage, incident follow-up.]",
-    live: false,
-  },
-  {
-    name: "Marketing",
-    body: "[Placeholder — content ops, campaign reporting, lead routing.]",
-    live: false,
   },
 ];
 
@@ -58,21 +56,23 @@ export default function SolutionsPage() {
           </div>
 
           <div className={styles.verticalGrid}>
-            {VERTICALS.map((vertical) =>
-              vertical.live ? (
-                <div className={`${styles.verticalCard} ${styles.verticalCardLive}`} key={vertical.name}>
-                  <h3>{vertical.name}</h3>
-                  <p>{vertical.body}</p>
-                  <Link href={vertical.href}>See how it works →</Link>
+            {VERTICALS.map((vertical) => (
+              <div className={styles.verticalCard} key={vertical.name}>
+                <div className={`icon-badge icon-badge-lg ${styles.verticalIcon}`}>
+                  {vertical.icon}
                 </div>
-              ) : (
-                <div className={styles.verticalCard} key={vertical.name}>
-                  <h3>{vertical.name}</h3>
-                  <p>{vertical.body}</p>
-                  <span className="tag">Coming soon</span>
+                <h3>{vertical.name}</h3>
+                <p>{vertical.body}</p>
+                <div className={styles.verticalChips}>
+                  {vertical.chips.map((chip) => (
+                    <span key={chip}>{chip}</span>
+                  ))}
                 </div>
-              )
-            )}
+                <Link href={vertical.href} className={styles.verticalLink}>
+                  See how it works →
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
       </section>
