@@ -35,7 +35,7 @@ const pain = {
   // This route will 404 until that page ships.
   footer: {
     type: "link",
-    text: "This isn't hypothetical — one of our own founders lived it before automating it away.",
+    text: "This isn't hypothetical. One of our own founders lived it before automating it away.",
     linkText: "Read the story →",
     href: "/solutions/gtm-automation/case-study",
   },
@@ -66,7 +66,7 @@ const workflows = [
     number: "01",
     painLabel: "CRM hygiene",
     title: "Pipeline hygiene + CRM updates",
-    body: "Stale fields flagged automatically — a team chat channel and linked ticket appear the moment a deal goes into play, so nothing waits on someone remembering to create either.",
+    body: "Stale fields flagged automatically. A team chat channel and linked ticket appear the moment a deal goes into play, so nothing waits on someone remembering to create either.",
   },
   {
     number: "02",
@@ -78,13 +78,13 @@ const workflows = [
     number: "03",
     painLabel: "Prospecting",
     title: "Prospect research + outreach drafts",
-    body: "Research done and outreach drafted ahead of the first send — the rep reviews and approves, nothing goes out on its own.",
+    body: "Research done and outreach drafted ahead of the first send. The rep reviews and approves, and nothing goes out on its own.",
   },
 ];
 
 const proof = {
   headline: "What it actually produces",
-  subtext: "Illustrative example of Workflow 01's output — a real deal, same shape as what ships today.",
+  subtext: "Illustrative example of Workflow 01's output, from a real deal, same shape as what ships today.",
   panelLabel: "#opportunity-northwind-io",
   lines: [
     {
@@ -93,7 +93,7 @@ const proof = {
     },
     {
       title: "Ticket filed",
-      body: "Linked ticket created under the Opportunity project — deduped against existing tickets.",
+      body: "Linked ticket created under the Opportunity project, deduped against existing tickets.",
     },
     {
       title: "Stale fields flagged",

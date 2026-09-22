@@ -33,7 +33,7 @@ const pain = {
   // No case study exists for this vertical yet — plain note, not a link.
   footer: {
     type: "note",
-    text: "A dogfooded founder story for this vertical is in progress — check back soon.",
+    text: "A dogfooded founder story for this vertical is in progress. Check back soon.",
   },
 };
 
@@ -62,19 +62,19 @@ const workflows = [
     number: "01",
     painLabel: "Roadmap hygiene",
     title: "Roadmap sync + stakeholder view",
-    body: "Roadmap items are checked against linked ticket status automatically — stale or drifted items get flagged instead of sitting unnoticed until the next planning review.",
+    body: "Roadmap items are checked against linked ticket status automatically. Stale or drifted items get flagged instead of sitting unnoticed until the next planning review.",
   },
   {
     number: "02",
     painLabel: "Spec-to-ticket handoff",
     title: "Spec-to-ticket handoff",
-    body: "Spec sections turn into scoped tickets with acceptance criteria intact and a link back to the source doc — no detail lost in a manual rewrite.",
+    body: "Spec sections turn into scoped tickets with acceptance criteria intact and a link back to the source doc, so no detail is lost in a manual rewrite.",
   },
   {
     number: "03",
     painLabel: "Status reporting",
     title: "Status digest, drafted for review",
-    body: "A status update is assembled from real ticket and roadmap movement — the PM reviews and edits before it goes to stakeholders, nothing is sent on its own.",
+    body: "A status update is assembled from real ticket and roadmap movement. The PM reviews and edits before it goes to stakeholders, and nothing is sent on its own.",
   },
 ];
 
@@ -84,7 +84,7 @@ const workflows = [
 const proof = {
   headline: "What it's built to produce",
   subtext:
-    "Illustrative example of the spec-to-ticket handoff — the shape of the output this workflow is designed to ship.",
+    "Illustrative example of the spec-to-ticket handoff, the shape of the output this workflow is designed to ship.",
   panelLabel: "spec-checkout-redesign",
   lines: [
     {
@@ -97,7 +97,7 @@ const proof = {
     },
     {
       title: "Stakeholder note drafted",
-      body: "A short update ready for review before it goes out — nothing sent automatically.",
+      body: "A short update ready for review before it goes out. Nothing is sent automatically.",
     },
   ],
 };
