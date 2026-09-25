@@ -1,0 +1,18 @@
+{
+  "slug": "paid-subscriber-exclusive-automation-post",
+  "title": "Paid Subscriber Exclusive: Deep Dive on Automation",
+  "subtitle": "An Automation-Watch-tagged post that is not free",
+  "post_date": "2026-09-21T12:00:00.000Z",
+  "canonical_url": "https://kgmartin.substack.com/p/paid-subscriber-exclusive-automation-post",
+  "audience": "only_paid",
+  "cover_image": null,
+  "postTags": [
+    {
+      "id": "3c90e9be-2945-4514-b986-c7136df8c573",
+      "publication_id": 10936296,
+      "name": "Automation Watch",
+      "slug": "automation-watch",
+      "hidden": false
+    }
+  ]
+}

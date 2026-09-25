@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Nav from "../../components/Nav";
 import HashLink from "../../components/HashLink";
 import styles from "./page.module.css";
@@ -7,11 +8,6 @@ export const metadata = {
 };
 
 const CATEGORIES = [
-  {
-    anchor: "blog",
-    title: "Blog",
-    description: "[Placeholder: thoughts on automation, strategy, and growth.]",
-  },
   {
     anchor: "case-studies",
     title: "Case Studies",
@@ -38,6 +34,10 @@ export default function ResourcesPage() {
       </section>
 
       <div className={styles.categories}>
+        <Link href="/blog" className={`card card-link ${styles.categoryCard}`}>
+          <h3>Blog</h3>
+          <p>Automation Watch: our weekly roundup, syndicated from Substack.</p>
+        </Link>
         {CATEGORIES.map((cat) => (
           <HashLink
             key={cat.anchor}
@@ -50,14 +50,6 @@ export default function ResourcesPage() {
           </HashLink>
         ))}
       </div>
-
-      <section id="blog" className={styles.contentSection}>
-        <h2>Blog</h2>
-        <p>
-          [Placeholder — blog posts will appear here. Reachable directly via
-          the Resources dropdown in the nav, or the card above.]
-        </p>
-      </section>
 
       <section id="case-studies" className={styles.contentSection}>
         <h2>Case Studies</h2>

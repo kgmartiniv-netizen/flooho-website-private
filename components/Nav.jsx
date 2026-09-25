@@ -13,7 +13,7 @@ const SOLUTIONS_DROPDOWN = [
 ];
 
 const RESOURCES_DROPDOWN = [
-  { href: "/resources#blog", label: "Blog" },
+  { href: "/blog", label: "Blog" },
   { href: "/resources#case-studies", label: "Case Studies" },
   { href: "/resources#press", label: "Press" },
 ];

@@ -1,0 +1,102 @@
+.post {
+  max-width: var(--container-prose);
+  margin: 0 auto;
+  padding: 56px var(--gutter) var(--space-24);
+}
+.postDate {
+  font: var(--type-small);
+  color: var(--text-muted);
+  margin-bottom: var(--space-3);
+}
+.post h1 {
+  margin-bottom: var(--space-3);
+}
+.subtitle {
+  font-size: 18px;
+  color: var(--text-body);
+  line-height: 1.5;
+  margin-bottom: var(--space-8);
+}
+
+/* Sanitized Substack body_html — plain tag selectors, since the content has
+   no class hooks of its own. */
+.body {
+  color: var(--text-body);
+  font-size: 16px;
+  line-height: 1.7;
+}
+.body :global(h1),
+.body :global(h2),
+.body :global(h3),
+.body :global(h4) {
+  color: var(--text-primary);
+  margin: var(--space-8) 0 var(--space-3);
+}
+.body :global(h2) {
+  font-size: 24px;
+}
+.body :global(h3) {
+  font-size: 20px;
+}
+.body :global(p) {
+  margin-bottom: var(--space-5);
+}
+.body :global(ul),
+.body :global(ol) {
+  margin: 0 0 var(--space-5) 1.4em;
+}
+.body :global(li) {
+  margin-bottom: var(--space-2);
+}
+.body :global(a) {
+  color: var(--coral);
+  text-decoration: underline;
+}
+.body :global(a:hover) {
+  color: var(--red-core);
+}
+.body :global(strong),
+.body :global(b) {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+.body :global(blockquote) {
+  border-left: 3px solid var(--border-subtle);
+  padding-left: var(--space-5);
+  margin: var(--space-6) 0;
+  color: var(--text-muted);
+  font-style: italic;
+}
+.body :global(hr) {
+  border: none;
+  border-top: 1px solid var(--border-faint);
+  margin: var(--space-8) 0;
+}
+.body :global(img) {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-control);
+  margin: var(--space-6) 0;
+}
+.body :global(figure) {
+  margin: var(--space-6) 0;
+}
+.body :global(figcaption) {
+  font: var(--type-small);
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: var(--space-2);
+}
+
+.substackLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-8);
+  color: var(--coral);
+  font-size: 15px;
+  font-weight: 600;
+}
+.substackLink:hover {
+  color: var(--red-core);
+}
