@@ -32,9 +32,9 @@ export default function Footer() {
         <div className={styles.column}>
           <span className={`type-label ${styles.columnLabel}`}>Resources</span>
           <div className={styles.linkList}>
-            <HashLink href="/resources#blog" className={styles.footerLink}>
+            <Link href="/blog" className={styles.footerLink}>
               Blog
-            </HashLink>
+            </Link>
             <HashLink href="/resources#case-studies" className={styles.footerLink}>
               Case Studies
             </HashLink>
