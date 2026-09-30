@@ -22,3 +22,13 @@
   color: var(--text-body);
   line-height: 1.5;
 }
+.detailLink {
+  display: inline-block;
+  font-size: 14px;
+  color: var(--text-body);
+  line-height: 1.5;
+  transition: color var(--dur-instant) var(--ease-out);
+}
+.detailLink:hover {
+  color: var(--coral);
+}

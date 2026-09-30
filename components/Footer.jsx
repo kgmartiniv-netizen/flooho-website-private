@@ -52,8 +52,8 @@ export default function Footer() {
             </Link>
             {/* Live as of 2026-09-10 — a real mailto link now, matching
                 the contact page. */}
-            <a href="mailto:hello@flooho.com" className={styles.emailLink}>
-              hello@flooho.com
+            <a href="mailto:hello@flooho.io" className={styles.emailLink}>
+              hello@flooho.io
             </a>
           </div>
         </div>

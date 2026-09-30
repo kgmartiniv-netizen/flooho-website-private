@@ -12,7 +12,8 @@ const DETAILS = [
   {
     icon: <EmailIcon />,
     label: "Email",
-    value: "hello@flooho.com",
+    value: "hello@flooho.io",
+    href: "mailto:hello@flooho.io",
   },
 ];
 
@@ -24,7 +25,13 @@ export default function ContactDetails() {
           <div className="icon-badge icon-badge-sm">{detail.icon}</div>
           <div>
             <h3>{detail.label}</h3>
-            <p>{detail.value}</p>
+            {detail.href ? (
+              <a href={detail.href} className={styles.detailLink}>
+                {detail.value}
+              </a>
+            ) : (
+              <p>{detail.value}</p>
+            )}
           </div>
         </div>
       ))}
