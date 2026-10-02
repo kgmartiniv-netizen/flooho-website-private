@@ -1,6 +1,13 @@
 /* =========================================================
-   FLOOHO DESIGN SYSTEM — v2
+   FLOOHO DESIGN SYSTEM — v3
    Drop-in replacement for app/globals.css.
+
+   v3 adds the logo 3c ring palette (teal, blue, green, lemon,
+   violet). Each hue has a BRAND value (fills, rings, dots, the
+   logo itself) and, where the brand value fails 4.5:1 on dark,
+   a -text value lightened in OKLCH at the same hue. Red/coral
+   stay primary; the ring colours are accents and states only.
+   One ring hue per component, never several side by side.
 
    Reconciled from the four page stylesheets and eight
    component modules on master @ da231e4. Same hexes as v1
@@ -40,8 +47,31 @@
   --border-faint: #33332f;    /* section rules, list dividers */
 
   /* ---------- STATUS ---------- */
-  --status-success: #9ac59a; /* NEW · oklch(0.78 0.075 145) — 9.0 : 1 on page */
-  --status-error: #e08585;   /* was an untokenized literal in ContactForm.module.css */
+  /* ---------- RING PALETTE (logo 3c) ----------
+     Contrast listed as page / raised. Brand values under 4.5:1
+     are FILLS ONLY; use the -text value for type and icons. */
+  --teal: #1fb5a8;        /* 6.8 / 5.5 — text-safe as is */
+  --blue: #2a5bd7;        /* 3.0 / 2.4 — fills only */
+  --blue-text: #77a2fe;   /* 7.0 / 5.6 */
+  --blue-deep: #1a3fa8;   /* logo inner ring core — logo and illustration only */
+  --green: #1fa85a;       /* 5.7 / 4.5 — fills; text on page only */
+  --green-text: #3aba6a;  /* 7.0 / 5.6 */
+  --lemon: #ffe14d;       /* 13.4 / 10.8 — highlight; never text on white (1.3:1) */
+  --violet: #6a2fc0;      /* 2.3 / 1.9 — fills only, sparingly */
+  --violet-text: #b192fd; /* 7.0 / 5.6 */
+  /* Label ink on fills: --on-red for teal, green, lemon (7.7, 6.3, 15.0);
+     --text-primary for blue and violet. */
+
+  /* Logo ring gradients, for the thin ring motif. */
+  --ring-outer: linear-gradient(90deg, var(--lemon), var(--green));
+  --ring-inner: linear-gradient(90deg, var(--blue-deep), var(--teal));
+
+  /* ---------- STATUS ---------- */
+  --status-success: var(--green-text); /* CHANGED from #9ac59a — logo green */
+  --status-info: var(--blue-text);     /* NEW */
+  --status-connected: var(--teal);     /* NEW · live integrations, synced, linked */
+  --status-highlight: var(--lemon);    /* NEW · new/featured markers, never body text */
+  --status-error: #e08585;             /* unchanged — stays in the red family */
 
   /* ---------- TYPE ---------- */
   /* Archivo, loaded via next/font/google in app/layout.js and exposed as
@@ -314,6 +344,38 @@ a.link-accent {
   border: 1px solid var(--coral);
   border-radius: var(--radius-pill);
   padding: 4px 12px;
+}
+
+/* Status tags — same shape as .tag, one hue each. */
+.tag-success { color: var(--status-success); border-color: var(--status-success); }
+.tag-info { color: var(--status-info); border-color: var(--status-info); }
+.tag-connected { color: var(--status-connected); border-color: var(--status-connected); }
+.tag-new { color: var(--on-red); background: var(--lemon); border-color: var(--lemon); }
+
+/* Status dot — pairs with a text label, never alone. */
+.status-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-pill);
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+/* ---------- RING MOTIF ----------
+   A 2px gradient hairline echoing the logo's rings. At most one
+   per viewport: a featured card, the hero mark, an avatar. */
+.ring-outer,
+.ring-inner {
+  border: 2px solid transparent;
+  background:
+    linear-gradient(var(--surface-raised), var(--surface-raised)) padding-box,
+    var(--ring-outer) border-box;
+}
+.ring-inner {
+  background:
+    linear-gradient(var(--surface-raised), var(--surface-raised)) padding-box,
+    var(--ring-inner) border-box;
 }
 
 /* ---------- SECTION SPACING ----------
